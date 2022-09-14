@@ -7,11 +7,6 @@ import { GetShortUrlBody, ResponseObject } from './entity/entity';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
   @Get(':id')
   @Redirect('', 301)
   async getLongUrl(@Param('id') id: string): Promise<any> {

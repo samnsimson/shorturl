@@ -11,10 +11,6 @@ export class AppService {
     this.db = new JsonDB(new Config('shorturl-db', true, false, '/'));
   }
 
-  getHello(): string {
-    return 'Hello World!';
-  }
-
   generateUUID(): string {
     return uuidv4();
   }
