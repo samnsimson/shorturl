@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, Post, Redirect } from '@nestjs/common';
+import { ApiResponse } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { GetShortUrlBody, ResponseObject } from './entity/entity';
 
@@ -18,6 +19,7 @@ export class AppController {
   }
 
   @Post('get-short-url')
+  @ApiResponse({ type: ResponseObject })
   async getShortUrl(@Body() body: GetShortUrlBody): Promise<ResponseObject> {
     return await this.appService.getShortUrl(body);
   }

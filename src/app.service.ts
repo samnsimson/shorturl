@@ -20,7 +20,7 @@ export class AppService {
   }
 
   generateShortId(): string {
-    return uuidv4().slice(0, 8);
+    return this.generateUUID().slice(0, 8);
   }
 
   async saveData(data: ResponseObject): Promise<ResponseObject> {
